@@ -29,3 +29,6 @@ def pictures_by_genre_page(genre):
     result = get_picture_by_genre(genre)
     return jsonify(result)
 
+
+if __name__ == "__main__":
+    app.run()
