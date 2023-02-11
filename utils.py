@@ -59,21 +59,21 @@ def get_picture_by_rating(rating):
 
     if rating == 'children':
         query = f'''
-        SELECT `title`, `rating`, `decription` 
+        SELECT `title`, `rating`, `description` 
         FROM netflix
         WHERE `rating` = 'G'
         '''
 
     elif rating == 'family':
         query = f'''
-        SELECT `title`, `rating`, `decription` 
+        SELECT `title`, `rating`, `description` 
         FROM netflix
         WHERE `rating` IN ('G', 'PG', 'PG-13')
         '''
 
     elif rating == 'adult':
         query = f'''
-        SELECT `title`, `rating`, `decription` 
+        SELECT `title`, `rating`, `description` 
         FROM netflix
         WHERE `rating` IN ('R', 'NC-17')
         '''
@@ -140,7 +140,7 @@ def get_picture_by_actors(actor1, actor2):
 def get_picture_by_type_year_genre(type, year, genre):
 
     query = f'''
-            SELECT `title`, `decription`
+            SELECT `title`, `description`
             FROM netflix 
             WHERE `type` = '{type}' 
             AND `release_year` = '{year}' 
