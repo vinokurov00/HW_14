@@ -94,7 +94,7 @@ def get_picture_by_genre(genre):
     query = f'''
             SELECT `title`, `description`
             FROM netflix
-            WHERE `genre` = '{genre}'
+            WHERE `listed_in` LIKE '%{genre}%'
             ORDER BY `release_year` DESC
             LIMIT 10
             '''
@@ -144,7 +144,7 @@ def get_picture_by_type_year_genre(type, year, genre):
             FROM netflix 
             WHERE `type` = '{type}' 
             AND `release_year` = '{year}' 
-            AND `genre` = '{genre}'
+            AND `listed_in` LIKE '{genre}'
             '''
 
     raw_data = get_data(query)
